@@ -1,0 +1,17 @@
+{
+  "name": "crypto-price-checker",
+  "version": "1.0.0",
+  "description": "a web application for the support of 24 hours instructions",
+  "license": "ISC",
+  "author": "Ahsan",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}

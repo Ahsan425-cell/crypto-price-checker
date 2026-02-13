@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+   min-height: 100vh;
+    background: radial-gradient(circle at top,#1f2933,#0f172a,#020617);
+    background-image: url("741670336834.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.container{
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.card{
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: 0.3s ease;
+    font-family: 'Montserrat',sans-serif;
+    backdrop-filter: blur(10px);
+}
+
+.card :hover{
+    transform: translateY(-5px);
+}
+
+.card h1{
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.search-form{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-form input{
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-form input:focus{
+    border-color: #2a5298;
+    outline: none;
+}
+
+.search-form button{
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg,#00c6ff,#0072ff);
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.search-form button:hover{
+    background: #1e3c72;
+    transform: scale(1.05);
+}
+
+.result{
+    margin-top: 20px;
+}
+
+.result h2{
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.price{
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2a5298;
+}
+
+.change{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.error{
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffe5e5;
+    border-radius: 8px;
+    color: #d8000c;
+    font-weight: 500;
+}
+
+@media (max-width:500px){
+    .search-form{
+        flex-direction: column;
+    }
+    .search-form button{
+        width: 100%;
+    }
+}
