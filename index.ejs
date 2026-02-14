@@ -4,30 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Crypto Price Checker</title>
+        <!-- Link to external CSS -->
         <link rel="stylesheet" href="/style.css"/>
+        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Main container -->
             <div class="container">
                 <div class="card">
                     <h1>Crypto Price Checker</h1>
+                <!-- ====================== -->
+                <!-- Crypto Search Form -->
+                <!-- ====================== -->
+                <!-- Form sends POST request to /check-price route -->            
 
                     <form action="/check-price" method="POST" class="search-form">
                     <input type="text" name="crypto" placeholder="Enter crypto e.g.(bitcoin etc.)" required>
                     <button type="submit">Check Price</button> 
                     </form>
+                    <!-- ====================== -->
+                    <!-- Display Crypto Price -->
+                    <!-- ====================== -->
 
                     <% if(cryptoData){ %>
                        <div class="result">
                             <h2>Current Price</h2>
+                            <!-- Show crypto price formatted with commas -->
                             <p class="price">$<%= cryptoData.toLocaleString() %></p>
-        
+                            <!-- Show 24h price change -->
                             <% if(typeof cryptoChange !== "undefined" && cryptoChange !== null){ %>
                             <p class="change">
                             24h Change:
+                            <!-- Color green for positive, red for negative -->
                             <span style="color:<%= cryptoChange >= 0 ? 'green': 'red'%>">
                             <%= cryptoChange.toFixed(2)  %>%
                             </span>
@@ -35,12 +47,15 @@
                             <% } %>
                         </div>
                     <% } %>
+                    <!-- ====================== -->
+                    <!-- Display Error Messages -->
+                    <!-- ====================== -->
                     <% if(error){ %>
                         <div class="error">
                             <p style="color: red;"><%= error %></p>
                         </div>
                     <% } %>
-            </div>
-        </div>
+            </div>      <!-- End Card -->
+        </div>          <!-- End Container -->
     </body>
 </html>
